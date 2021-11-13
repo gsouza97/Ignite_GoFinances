@@ -19,7 +19,7 @@ import {
 } from "./styles";
 import { RFValue } from "react-native-responsive-fontsize";
 
-import HighlightCard from "../../components/HighlightCard";
+import { HighlightCard } from "../../components/HighlightCard";
 import {
   TransactionCard,
   TransactionCardProps,

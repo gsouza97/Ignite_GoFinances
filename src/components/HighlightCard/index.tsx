@@ -36,5 +36,3 @@ export function HighlightCard({ type, title, amount, lastTransaction }: Props) {
     </Container>
   );
 }
-
-export default HighlightCard;
