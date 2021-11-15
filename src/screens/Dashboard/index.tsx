@@ -16,6 +16,7 @@ import {
   Transactions,
   Title,
   TransactionsList,
+  LogoutButton,
 } from "./styles";
 import { RFValue } from "react-native-responsive-fontsize";
 
@@ -72,7 +73,9 @@ export function Dashboard() {
               <UserName>Gabriel</UserName>
             </User>
           </UserInfo>
-          <Icon name="power" />
+          <LogoutButton onPress={() => {}}>
+            <Icon name="power" />
+          </LogoutButton>
         </UserWrapper>
       </Header>
 
