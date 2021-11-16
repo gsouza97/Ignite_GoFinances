@@ -33,10 +33,6 @@ interface FormData {
   amount: string;
 }
 
-type NavigationProps = {
-  screen: string;
-};
-
 const schema = Yup.object().shape({
   name: Yup.string().required("Nome é obrigatório"),
   amount: Yup.number()
