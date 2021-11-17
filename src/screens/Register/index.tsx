@@ -89,7 +89,7 @@ export function Register() {
       id: String(uuid.v4()),
       name: form.name,
       amount: form.amount,
-      transactionType: transactionType,
+      type: transactionType,
       category: category.key,
       date: new Date(),
     };
@@ -99,9 +99,9 @@ export function Register() {
       const data = await AsyncStorage.getItem(dataKey);
       const currentData = data ? JSON.parse(data) : [];
 
-      const dataFormated = [...currentData, newTransaction];
+      const dataFormatted = [...currentData, newTransaction];
 
-      await AsyncStorage.setItem(dataKey, JSON.stringify(dataFormated));
+      await AsyncStorage.setItem(dataKey, JSON.stringify(dataFormatted));
 
       setTransactionType("");
       reset();
