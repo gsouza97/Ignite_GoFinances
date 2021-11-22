@@ -18,6 +18,7 @@ import { AppRoutes } from "./src/routes/app.routes";
 import { Dashboard } from "./src/screens/Dashboard";
 import { Register } from "./src/screens/Register";
 import { CategorySelect } from "./src/screens/CategorySelect";
+import { StatusBar } from "react-native";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -33,6 +34,11 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <NavigationContainer>
+        <StatusBar
+          barStyle="light-content"
+          backgroundColor="transparent"
+          translucent
+        />
         <AppRoutes />
       </NavigationContainer>
     </ThemeProvider>
