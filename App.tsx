@@ -19,6 +19,7 @@ import { Dashboard } from "./src/screens/Dashboard";
 import { Register } from "./src/screens/Register";
 import { CategorySelect } from "./src/screens/CategorySelect";
 import { StatusBar } from "react-native";
+import { SignIn } from "./src/screens/SignIn";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -39,7 +40,8 @@ export default function App() {
           backgroundColor="transparent"
           translucent
         />
-        <AppRoutes />
+        {/* <AppRoutes /> */}
+        <SignIn />
       </NavigationContainer>
     </ThemeProvider>
   );
