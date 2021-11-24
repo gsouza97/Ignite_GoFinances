@@ -20,6 +20,7 @@ import { Register } from "./src/screens/Register";
 import { CategorySelect } from "./src/screens/CategorySelect";
 import { StatusBar } from "react-native";
 import { SignIn } from "./src/screens/SignIn";
+import { AuthProvider } from "./src/hooks/useAuth";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -40,8 +41,10 @@ export default function App() {
           backgroundColor="transparent"
           translucent
         />
-        {/* <AppRoutes /> */}
-        <SignIn />
+        <AuthProvider>
+          {/* <AppRoutes /> */}
+          <SignIn />
+        </AuthProvider>
       </NavigationContainer>
     </ThemeProvider>
   );
