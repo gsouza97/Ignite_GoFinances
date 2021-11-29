@@ -57,6 +57,13 @@ export function Dashboard() {
   ) {
     // filtra somente as transacoes positivas, depois pega só o timestamp das datas dessas transacoes
     // e pega o maior valor utilizando o Math, já transformando pra um Date. Depois formata.
+    const collectionFiltered = transactions.filter(
+      (transaction) => transaction.type === type
+    );
+
+    if (collectionFiltered.length === 0) {
+      return String(0);
+    }
     const lastTransaction = Math.max.apply(
       Math,
       transactions
