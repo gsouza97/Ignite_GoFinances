@@ -1,6 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useFocusEffect } from "@react-navigation/core";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { RFValue } from "react-native-responsive-fontsize";
 import { VictoryPie } from "victory-native";
 import { HistoryCard } from "../../components/HistoryCard";
@@ -22,6 +22,7 @@ import {
   Month,
 } from "./styles";
 import { Loading } from "../../components/Loading";
+import { useAuth } from "../../hooks/useAuth";
 
 interface TransactionData {
   type: "up" | "down";
@@ -47,6 +48,7 @@ export function Resume() {
     []
   );
   const theme = useTheme();
+  const { user } = useAuth();
 
   function handleDateChange(action: "next" | "prev") {
     if (action === "next") {
@@ -60,7 +62,7 @@ export function Resume() {
 
   async function loadData() {
     setIsLoading(true);
-    const dataKey = "@gofinances:transactions";
+    const dataKey = `@gofinances:transactions_user:${user.id}`;
     const response = await AsyncStorage.getItem(dataKey);
     const responseFormatted = response ? JSON.parse(response) : [];
 
