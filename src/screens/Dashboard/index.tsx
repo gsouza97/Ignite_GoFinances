@@ -1,7 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
 
-import { ActivityIndicator } from "react-native";
-
 import {
   Container,
   Header,
@@ -18,7 +16,6 @@ import {
   TransactionsList,
   LogoutButton,
 } from "./styles";
-import { RFValue } from "react-native-responsive-fontsize";
 
 import { HighlightCard } from "../../components/HighlightCard";
 import {
@@ -28,6 +25,7 @@ import {
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useFocusEffect } from "@react-navigation/native";
 import { Loading } from "../../components/Loading";
+import { useAuth } from "../../hooks/useAuth";
 
 export interface DataListProps extends TransactionCardProps {
   id: string;
@@ -51,6 +49,7 @@ export function Dashboard() {
   const [highlightData, setHighlightData] = useState<HighlightData>(
     {} as HighlightData
   );
+  const { signOut, user } = useAuth();
 
   function getLastTransactionDate(
     transactions: DataListProps[],
@@ -171,15 +170,15 @@ export function Dashboard() {
               <UserInfo>
                 <Photo
                   source={{
-                    uri: "https://avatars.githubusercontent.com/u/76229106?v=4",
+                    uri: user.photo,
                   }}
                 />
                 <User>
                   <UserGreetings>Olá, </UserGreetings>
-                  <UserName>Gabriel</UserName>
+                  <UserName>{user.name}</UserName>
                 </User>
               </UserInfo>
-              <LogoutButton onPress={() => {}}>
+              <LogoutButton onPress={signOut}>
                 <Icon name="power" />
               </LogoutButton>
             </UserWrapper>
