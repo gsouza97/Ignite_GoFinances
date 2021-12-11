@@ -1,6 +1,17 @@
 # Sobre o app
 
-Aplicação para controle de finanças.
+Aplicação para controle de finanças criado durante o módulo II da Trilha de React Native do Bootcamp Ignite Rocketseat.
+
+# Technologies
+
+- [React Native](https://reactnative.dev)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Expo](https://expo.dev)
+- [Styled-Components](https://styled-components.com)
+- [Victory](https://formidable.com/open-source/victory/docs/native)
+- [React Hook Form](https://react-hook-form.com)
+- [React Native Responsive Fontsize](https://www.npmjs.com/package/react-responsive-font-size)
+- [React Native SVG Transformer](https://github.com/kristerkari/react-native-svg-transformer)
 
 ## Screenshots
 
