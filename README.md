@@ -8,6 +8,8 @@ Aplicação para controle de finanças criado durante o módulo II da Trilha de 
 - [TypeScript](https://www.typescriptlang.org/)
 - [Expo](https://expo.dev)
 - [Styled-Components](https://styled-components.com)
+- [Async Storage](https://reactnative.dev/docs/asyncstorage)
+- [React Navigation](https://reactnavigation.org)
 - [Victory](https://formidable.com/open-source/victory/docs/native)
 - [React Hook Form](https://react-hook-form.com)
 - [React Native Responsive Fontsize](https://www.npmjs.com/package/react-responsive-font-size)
